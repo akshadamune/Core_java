@@ -7,11 +7,11 @@ public class Buffer {
         sb.append("Patil");
         System.out.println(sb);
 
-        //insret
+        // insret
 
-        sb.insert(0, "Hello");  //Hello
+        sb.insert(0, "Hello"); // Hello
 
-        sb.delete(0, 0)
+        sb.delete(0, 0);
         System.out.println(sb);
     }
 }
