@@ -1,9 +1,9 @@
 class Dog {
 
-    String name = "Rocky";
+    String name;
 
     void bark() {
-        System.out.println(name + "Barks!");
+        System.out.println(name + " is Barking!");
     }
 }
 

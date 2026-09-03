@@ -8,7 +8,7 @@ class Dog {
     }
 }
 
-public class Objectexample {
+public class ObjectExample {
     public static void main(String[] args) {
         // Main obj = new Main();
 
