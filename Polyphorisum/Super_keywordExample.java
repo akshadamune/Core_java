@@ -47,7 +47,7 @@ public class Super_keywordExample {
 
     public static void main(String[] args) {
 
-        Manger manager = new Manager("Sales", "ABC Corp")
+        Manager manager = new Manager("Sales", "ABC Corp");
     }
 
 }
