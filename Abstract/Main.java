@@ -26,10 +26,13 @@ class Bike extends Vehical {
 
 public class Main {
     public static void main(String[] args) {
+
         Vehical vehical = new Bike();
         vehical.start();
+        vehical.displytyers();
 
         Vehical vehical2 = new Car();
-        vehical.start();
+        vehical2.start();
+        vehical2.displytyers();
     }
 }
