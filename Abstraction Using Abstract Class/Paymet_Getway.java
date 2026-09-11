@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // Abstract class defines the contract for all payments
 abstract class Payment {
     public abstract void processPayment(double amount);
@@ -65,9 +67,52 @@ class NetBankingPayment extends Payment {
     }
 }
 
+// Service that uses abstraction
+class PaymentService {
+    private final Payment payment;
+
+    public PaymentService(Payment payment) {
+        this.payment = payment;
+    }
+
+    public void executePayment(double amount) {
+        payment.processPayment(amount);
+        payment.generateReceipt();
+    }
+}
+
+// Main Program
 public class Paymet_Getway {
-
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select Payment Method: 1. Credit Card  2. UPI  3. Net Banking");
+        int choice = scanner.nextInt();
+        System.out.print("Enter Amount: ");
+        double amount = scanner.nextDouble();
+        Payment payment;
+        switch (choice) {
+            case 1:
+                System.out.print("Enter Credit Card Number: ");
+                String cardNumber = scanner.nextLine();
+                payment = new CreditCardPayment(cardNumber);
+                break;
+            case 2:
+                System.out.print("Enter UPI ID: ");
+                String upiId = scanner.nextLine();
+                payment = new UpiPayment(upiId);
+                break;
+            case 3:
+                System.out.print("Enter Net Banking User ID: ");
+                String userId = scanner.nextLine();
+                payment = new NetBankingPayment(userId);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                scanner.close();
+                return; // Exit safely
+        }
+        PaymentService service = new PaymentService(payment);
+        service.executePayment(amount);
+        scanner.close();
     }
 }
