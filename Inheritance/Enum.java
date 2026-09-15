@@ -8,3 +8,5 @@ public class Enum {
         System.out.println("Today is: " + today);
     }
 }
+
+  

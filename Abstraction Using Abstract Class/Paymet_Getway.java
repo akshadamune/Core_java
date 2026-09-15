@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 // Abstract class defines the contract for all payments
-abstract class Payment {
-    public abstract void processPayment(double amount);
+interface Payment {
+    void processPayment(double amount);
 
-    public abstract void generateReceipt();
+    void generateReceipt();
 }
 
 // Credit Card Payment Implementation
-class CreditCardPayment extends Payment {
+class CreditCardPayment implements Payment {
     private final String cardNumber;
 
     public CreditCardPayment(String cardNumber) {
@@ -28,7 +28,7 @@ class CreditCardPayment extends Payment {
 }
 
 // UPI Payment Implementation
-class UpiPayment extends Payment {
+class UpiPayment implements Payment {
     private final String upiId;
 
     public UpiPayment(String upiId) {
@@ -48,7 +48,7 @@ class UpiPayment extends Payment {
 }
 
 // Net Banking Payment Implementation
-class NetBankingPayment extends Payment {
+class NetBankingPayment implements Payment {
     private final String userId;
 
     public NetBankingPayment(String userId) {
@@ -93,17 +93,17 @@ public class Paymet_Getway {
         switch (choice) {
             case 1:
                 System.out.print("Enter Credit Card Number: ");
-                String cardNumber = scanner.nextLine();
+                String cardNumber = scanner.next();
                 payment = new CreditCardPayment(cardNumber);
                 break;
             case 2:
                 System.out.print("Enter UPI ID: ");
-                String upiId = scanner.nextLine();
+                String upiId = scanner.next();
                 payment = new UpiPayment(upiId);
                 break;
             case 3:
                 System.out.print("Enter Net Banking User ID: ");
-                String userId = scanner.nextLine();
+                String userId = scanner.next();
                 payment = new NetBankingPayment(userId);
                 break;
             default:

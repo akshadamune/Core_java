@@ -53,6 +53,8 @@ public class Hierachialinheritance_example {
         current.deposite(500);
         current.withdraw(2800);
 
-    }
+    }  
+
+    // 
 
 }
