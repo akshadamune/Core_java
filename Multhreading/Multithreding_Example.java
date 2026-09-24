@@ -12,7 +12,8 @@ public class Multithreding_Example {
         MyThread t2 = new MyThread();
         t2.start();
 
-        // run() → contains the task/code that the thread performs.
+        // run() → contains the task/code that the thread performs. (perfrom in
+        // overriding)
         // start() → starts a new thread and then automatically calls run().
 
         Thread t3 = new Thread();
